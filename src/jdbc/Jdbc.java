@@ -43,4 +43,30 @@ public boolean userExist(UserDto user) throws SQLException, ClassNotFoundExcepti
 	}
 	return isUser;
 }
+
+public String register(UserDto user) throws SQLException, ClassNotFoundException {
+	Connection con=null;
+	PreparedStatement ps=null;
+	String msg="oops something went wrong.Try again";
+	try {
+		con=getConnection();
+		ps=con.prepareStatement("insert into user_mst (username,password,fname,lname) values(?,?,?,?);");
+		ps.setString(1, user.getUsername());
+		ps.setString(2, user.getPassword());
+		ps.setString(3, user.getFname());
+		ps.setString(4, user.getLname());
+		int r=ps.executeUpdate();
+		if(r>=1) {
+			msg="you are now registered";
+		}}
+		finally {
+			if(con!=null)
+				con.close();
+			if(ps!=null)
+				ps.close();
+			
+		}
+	return msg;
+	}
 }
+

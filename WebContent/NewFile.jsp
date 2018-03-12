@@ -25,11 +25,8 @@
 	if(btn!=null){
 	if(btn.equals("register")){
 		response.sendRedirect("registration.jsp");
-		System.out.println("hi");}
+		}
 	else{
-		System.out.println(btn+ ' ');
-		System.out.println(btn=="register");
-		//System.out.println(btn.equals("register"));
 	if(uid!=null&&pass!=null){
 	if(checkUser.userExist(user)){
 	request.setAttribute("uid",user.getUsername());

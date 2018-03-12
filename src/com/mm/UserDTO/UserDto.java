@@ -3,6 +3,27 @@ package com.mm.UserDTO;
 public class UserDto {
 	private String username;
 	private String password;
+	private String fname;
+	private String lname;
+	public UserDto(String username, String password, String fname, String lname) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.fname = fname;
+		this.lname = lname;
+	}
+	public String getFname() {
+		return fname;
+	}
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+	public String getLname() {
+		return lname;
+	}
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
 	public String getUsername() {
 		return username;
 	}
